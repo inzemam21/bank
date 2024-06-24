@@ -1,4 +1,4 @@
-.PHONY: postgres createdb dropdb migrateup migratedown test server
+.PHONY: postgres createdb dropdb migrateup migratedown test server mock
 
 postgres:
 	docker run --name bank -p 5433:5432 -e POSTGRES_PASSWORD=root -d postgres:12.19-alpine
@@ -23,4 +23,8 @@ test:
 
 server:
 	go run main.go
+
+mock:
+	mockgen -package mockdb -destination db/mock/store.go github.com/inzemam21/simplebank/db/sqlc Store
+
     

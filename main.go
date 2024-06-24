@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/inzemam21/simplebank/db/api"
+	"github.com/inzemam21/simplebank/api"
 	db "github.com/inzemam21/simplebank/db/sqlc"
 	"github.com/inzemam21/simplebank/util"
 	_ "github.com/lib/pq"
